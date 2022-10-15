@@ -1,23 +1,26 @@
 {
-  "name": "exam1",
+  "name": "PortfolioProject1",
   "version": "1.0.0",
   "description": "",
   "main": "./js/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/natalia-krupienikova/HelloFrontEnd.git"
+    "url": "git+ssh://git@github.com/natalia-krupienikova/PortfolioProject1.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/natalia-krupienikova/HelloFrontEnd/issues"
+    "url": "https://github.com/natalia-krupienikova/PortfolioProject1/issues"
   },
-  "homepage": "https://github.com/natalia-krupienikova/HelloFrontEnd#readme",
+  "homepage": "http://natalia-krupienikova.github.io/PortfolioProject1",
   "devDependencies": {
     "del": "^6.0.0",
+    "gh-pages": "^4.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
