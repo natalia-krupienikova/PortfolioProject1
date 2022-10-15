@@ -1,15 +1,6 @@
 let project_folder = "src";
 let source_folder = "assets";
-var gulp = require('gulp');
-var deploy = require('gulp-gh-pages');
 
-/**
- * Push build to gh-pages
- */
-gulp.task('deploy', function () {
-  return gulp.src("./dist/**/*")
-    .pipe(deploy())
-});
 let path = {
         build: {
             css: project_folder + "/css/",
@@ -35,6 +26,7 @@ let path = {
     {src, dest} = require("gulp"),
     gulp = require("gulp"),
     del = require("del"),
+    deploy = require('gulp-gh-pages'),
     scss = require("gulp-sass")(require("sass")),
     autoprefixer = require("gulp-autoprefixer"),
     group_media = require("gulp-group-css-media-queries"),
@@ -124,6 +116,11 @@ function watchFiles(params) {
 function clean() {
     return del(path.clean);
 }
+
+gulp.task('deploy', function () {
+    return gulp.src("./src/**/*")
+      .pipe(deploy())
+});  
 
 let build = gulp.series(clean, gulp.parallel(js, css, fonts, video, images));
 let watch = gulp.parallel(build, watchFiles);
